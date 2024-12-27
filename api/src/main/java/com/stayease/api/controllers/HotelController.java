@@ -42,7 +42,7 @@ public class HotelController {
 	
 	@GetMapping("/{hotelId}")
     public ResponseEntity<AppResponse> hotelById(@PathVariable("hotelId") Long hotelId) {
-		HotelResponse hotelResponse = hotelService.getHotel(hotelId);
+		HotelResponse hotelResponse = hotelService.findHotelById(hotelId);
         return responseMaker("fetch hotel detail successfully", HttpStatus.OK, hotelResponse);
     }
 	

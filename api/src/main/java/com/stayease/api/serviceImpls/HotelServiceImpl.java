@@ -42,11 +42,16 @@ public class HotelServiceImpl implements HotelService{
 		hotelRepository.save(hotel);
 		
 	}
-
+	
 	@Override
-	public HotelResponse getHotel(Long hotelId) {
+	public HotelResponse findHotelById(Long hotelId) {
 		Hotel hotel = hotelRepository.findById(hotelId).orElseThrow(() -> new NotFoundException("Hotel not found for given hotel id"));
 		return HotelResponse.convert(hotel);
+	}
+
+	@Override
+	public Hotel getHotel(Long hotelId) {
+		return hotelRepository.findById(hotelId).orElseThrow(() -> new NotFoundException("Hotel not found for given hotel id"));
 	}
 
 	@Override
