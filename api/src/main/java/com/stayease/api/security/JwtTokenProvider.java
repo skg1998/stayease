@@ -189,13 +189,6 @@ public class JwtTokenProvider {
     }
 
     /**
-     * Set jwt refresh token for remember me option.
-     */
-    public void setRememberMe() {
-        this.refreshTokenExpiresIn = rememberMeTokenExpiresIn;
-    }
-
-    /**
      * Extract jwt from bearer string.
      *
      * @param bearer String

@@ -28,6 +28,7 @@ import org.springframework.web.multipart.support.MissingServletRequestPartExcept
 import com.stayease.api.dto.AppResponse;
 import com.stayease.api.dto.ErrorResponse;
 
+import jakarta.validation.UnexpectedTypeException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -71,6 +72,7 @@ public class AppExceptionHandler {
         MethodArgumentTypeMismatchException.class,
         IllegalArgumentException.class,
         ConstraintViolationException.class,
+        UnexpectedTypeException.class,
         MissingRequestHeaderException.class,
         CipherException.class,
     })

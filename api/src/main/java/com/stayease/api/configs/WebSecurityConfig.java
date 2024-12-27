@@ -36,7 +36,9 @@ public class WebSecurityConfig{
                 .requestMatchers(
                     "/",
                     "/api/v1/auth/register",
-                    "/api/v1/auth/login"
+                    "/api/v1/auth/login",
+                    "/api/v1/hotel/",
+                    "/api/v1/hotel/**"
                 )
                 .permitAll()
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
