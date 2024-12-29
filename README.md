@@ -2,6 +2,8 @@
 > Develop a application to streamline the room booking process for a hotel management aggregator application using Srping boot, Mysql, spring security
 
 ## Endpoints
+- Local = http://localhost:8080/api/v1
+- Prod = https://stayease-ola9.onrender.com/api/v1
 
 ### Auth
 - POST /auth/register - register to application
