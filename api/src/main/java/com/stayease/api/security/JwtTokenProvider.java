@@ -36,26 +36,17 @@ public class JwtTokenProvider {
     @Getter
     private final Long tokenExpiresIn;
 
-    @Getter
-    private Long refreshTokenExpiresIn;
-
-    private final Long rememberMeTokenExpiresIn;
-
     private final HttpServletRequest httpServletRequest;
 
     public JwtTokenProvider(
         @Value("${app.secret}") final String appSecret,
         @Value("${app.jwt.token.expires-in}") final Long tokenExpiresIn,
-        @Value("${app.jwt.refresh-token.expires-in}") final Long refreshTokenExpiresIn,
-        @Value("${app.jwt.remember-me.expires-in}") final Long rememberMeTokenExpiresIn,
         final UserService userService,
         final HttpServletRequest httpServletRequest
     ) {
         this.userService = userService;
         this.appSecret = appSecret;
         this.tokenExpiresIn = tokenExpiresIn;
-        this.refreshTokenExpiresIn = refreshTokenExpiresIn;
-        this.rememberMeTokenExpiresIn = rememberMeTokenExpiresIn;
         this.httpServletRequest = httpServletRequest;
     }
 
@@ -87,16 +78,6 @@ public class JwtTokenProvider {
      */
     public String generateJwt(final Long id) {
         return generateTokenByUserId(id, tokenExpiresIn);
-    }
-
-    /**
-     * Generate refresh token by user ID.
-     *
-     * @param id String
-     * @return String
-     */
-    public String generateRefresh(final Long id) {
-        return generateTokenByUserId(id, refreshTokenExpiresIn);
     }
 
     /**

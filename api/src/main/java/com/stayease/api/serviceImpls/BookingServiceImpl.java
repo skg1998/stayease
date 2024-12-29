@@ -84,7 +84,7 @@ public class BookingServiceImpl implements BookingService{
     	User user = userService.getUser();
         Booking booking = bookingRepository.findById(bookingId).orElseThrow(() -> new NotFoundException("Booking not found for given id"));
         
-        if(user.getId().equals(booking.getCustomer().getId())) {
+        if(!user.getId().equals(booking.getCustomer().getId())) {
         	throw new BadRequestException("your are not allowed to check other user booking details");
         }
         

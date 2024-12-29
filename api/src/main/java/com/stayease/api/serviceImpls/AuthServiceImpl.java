@@ -104,7 +104,6 @@ public class AuthServiceImpl implements AuthService{
             .expiresIn(
                 TokenExpiresInResponse.builder()
                     .token(jwtTokenProvider.getTokenExpiresIn())
-                    .refreshToken(jwtTokenProvider.getRefreshTokenExpiresIn())
                     .build()
             )
             .build();

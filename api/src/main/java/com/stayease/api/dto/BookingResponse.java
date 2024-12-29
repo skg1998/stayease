@@ -16,6 +16,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class BookingResponse {
+	private Long bookingId;
 	private Long hotelId;
 	private String hotelName;
 	private String hotelDescription;
@@ -28,6 +29,7 @@ public class BookingResponse {
 	
 	public static BookingResponse convert(Booking booking) {
 		return BookingResponse.builder()
+				.bookingId(booking.getId())
 				.hotelId(booking.getHotel().getId())
 				.hotelName(booking.getHotel().getHotelName())
 				.hotelDescription(booking.getHotel().getDescription())

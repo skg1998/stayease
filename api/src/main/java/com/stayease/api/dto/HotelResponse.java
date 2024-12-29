@@ -23,6 +23,7 @@ public class HotelResponse {
 		return HotelResponse.builder()
 				.id(hotel.getId())
 				.hotelName(hotel.getHotelName())
+				.location(hotel.getLocation())
 				.description(hotel.getDescription())
 				.availableRoom(hotel.getAvailableRoom())
 				.build();
